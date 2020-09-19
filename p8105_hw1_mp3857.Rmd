@@ -49,16 +49,21 @@ Above, adding the as.numeric code to the beginning of the chunk explicitly perfo
 Second Code Chunk for Problem 1:
 
 ```{r}
+#converting the logical vector to numeric, and multiplying the random sample by the result
 as.numeric(pull(prob1_df, samp_gt_0))*pull(prob1_df, samp)
-as.factor(pull(prob1_df, samp_gt_0))*pull(prob1_df, samp)
-as.factor(pull(prob1_df, samp_gt_0))*pull(prob1_df, samp)
+#converting the logical vector to a factor, and multiplying the random sample by the result
+factor(pull(prob1_df, samp_gt_0))*pull(prob1_df, samp)
+#converting the logical vector to a factor and then converting the result to numeric, and multiply the random sample by the result
+as.numeric(factor(pull(prob1_df, samp_gt_0)))*pull(prob1_df, samp)
 ```
 
-##Problem 2
+##Problem 2 pt. 1
 
 Below is my code and inline comments for problem 2, part 1.
 ```{r}
+#installing packages
 data("penguins", package = "palmerpenguins")
+#viewing dataset
 view(penguins)
 #This dataset contains information about different species of penguins. It includes information on their species, the island they come from, their bill length/depth in millimeters, their flipper length in millimeters, their body mass in grams, sex, and a corresponding year (2007-2009). It is input as individual level data.
 ncol(penguins)
@@ -68,5 +73,16 @@ skimr::skim(penguins)
 #Using the skimr command, I found the mean of flipper_length_mm: 201mm.
 ```
 
+##Problem 2 pt. 2
 
+```{r}
+#library(ggplot2)
+    
+set.seed(1000)
+
+ggplot(penguins, aes(x = bill_length_mm, y = bill_length_mm)) + geom_point(aes(color = species))
+
+#saving first scatter plot below
+ggsave("penguin_scatterplot.pdf", height = 4, width = 4)
+```
 
