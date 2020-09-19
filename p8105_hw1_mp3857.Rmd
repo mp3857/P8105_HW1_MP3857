@@ -36,6 +36,7 @@ mean(pull(prob1_df, factor_vec))
 I can take the mean of the numeric and logical vectors, but not the factor or the character vectors. 
 This makes some sense as numbers have means. It is a bit confusing as to why you would be able to take the
 mean of the logical vector, when you wouldn't be able to take it of the factor or character vectors. I see that R will code things in a way that does not necessarily make sense. 
+<<<<<<< HEAD
 
 ```{r}
 as.numeric(pull(prob1_df, samp))
@@ -53,5 +54,6 @@ as.numeric(pull(prob1_df, samp_gt_0))*pull(prob1_df, samp)
 as.factor(pull(prob1_df, samp_gt_0))*pull(prob1_df, samp)
 as.factor(pull(prob1_df, samp_gt_0))*pull(prob1_df, samp)
 ```
+
 
 
