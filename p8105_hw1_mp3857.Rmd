@@ -61,7 +61,7 @@ as.numeric(factor(pull(prob1_df, samp_gt_0)))*pull(prob1_df, samp)
 
 Below is my code and inline comments for problem 2, part 1.
 ```{r}
-#installing packages
+#loading packages
 data("penguins", package = "palmerpenguins")
 #viewing dataset
 view(penguins)
@@ -69,6 +69,7 @@ view(penguins)
 ncol(penguins)
 nrow(penguins)
 #From the output and the above code, I can see that their are 344 penguins (rows) and 8 variables (columns).
+x = flipper_length_mm
 skimr::skim(penguins)
 #Using the skimr command, I found the mean of flipper_length_mm: 201mm.
 ```
