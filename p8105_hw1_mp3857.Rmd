@@ -21,7 +21,7 @@ tibble(
   samp = rnorm(10),
   samp_gt_0 = samp > 0, 
   char_vec = c("a", "b", "c", "d", "e", "f", "g", "h", "i", "j"),
-  factor_vec = factor(c("low", "low", "low", "mod", "mod", "mod","mod", "high", "high", "high"))
+  factor_vec = factor(c("low", "low", "low", "mod", "mod", "mod", "mod", "high", "high", "high"))
 )
 ```
 
@@ -36,9 +36,8 @@ mean(pull(prob1_df, factor_vec))
 I can take the mean of the numeric and logical vectors, but not the factor or the character vectors. 
 This makes some sense as numbers have means. It is a bit confusing as to why you would be able to take the
 mean of the logical vector, when you wouldn't be able to take it of the factor or character vectors. I see that R will code things in a way that does not necessarily make sense. 
-<<<<<<< HEAD
 
-```{r}
+```{r results= "hide"}
 as.numeric(pull(prob1_df, samp))
 as.numeric(pull(prob1_df, samp_gt_0))
 as.numeric(pull(prob1_df, char_vec))
@@ -53,6 +52,20 @@ Second Code Chunk for Problem 1:
 as.numeric(pull(prob1_df, samp_gt_0))*pull(prob1_df, samp)
 as.factor(pull(prob1_df, samp_gt_0))*pull(prob1_df, samp)
 as.factor(pull(prob1_df, samp_gt_0))*pull(prob1_df, samp)
+```
+
+##Problem 2
+
+Below is my code and inline comments for problem 2, part 1.
+```{r}
+data("penguins", package = "palmerpenguins")
+view(penguins)
+#This dataset contains information about different species of penguins. It includes information on their species, the island they come from, their bill length/depth in millimeters, their flipper length in millimeters, their body mass in grams, sex, and a corresponding year (2007-2009). It is input as individual level data.
+ncol(penguins)
+nrow(penguins)
+#From the output and the above code, I can see that their are 344 penguins (rows) and 8 variables (columns).
+skimr::skim(penguins)
+#Using the skimr command, I found the mean of flipper_length_mm: 201mm.
 ```
 
 
